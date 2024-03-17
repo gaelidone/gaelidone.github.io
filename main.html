@@ -12,14 +12,18 @@
 </head>
 
 <body>
+
    <div class="wrapper">
+
+
       <header class="header-mobile">
          <div class="wrap-logo">
             <img src="images/swag-logo.webp" alt="logo swag">
          </div>
          <i class="bi bi-list"></i>
       </header>
-      <aside class="hidden">
+
+      <aside id="aside">
          <i class="bi bi-x"></i>
          <header>
             <div class="wrap-logo">
@@ -34,24 +38,25 @@
                <li id="lompas" class="li-categoria"><i class="bi bi-caret-right-square"></i><p>Pantalones</p></li>
                <li id="zapas" class="li-categoria"><i class="bi bi-caret-right-square"></i><p>Zapatillas</p></li>
             </ul>
-            <a href="carrito.html"><i class="bi bi-cart-fill"></i> Carrito <p id="numCarrito">0</p></a>
+            <a href="carrito.html" class="carrito"><i class="bi bi-cart-fill"></i> Carrito <p id="numCarrito">0</p></a>
          </nav>
          <footer>
             <div class="social-media">
-               <i class="bi bi-instagram"></i>
-               <i class="bi bi-tiktok"></i>
-               <i class="bi bi-facebook"></i>
+               <a href="#"><i class="bi bi-instagram"></i></a>
+               <a href="https://www.tiktok.com/es/"><i class="bi bi-tiktok"></i></a>
+               <a href="https://www.facebook.com/?locale=es_LA"><i class="bi bi-facebook"></i></a>
             </div>
-            <p>Todos los derechos reservados &copy; 2024 SWAG - Shop</p>
+            <p>&copy; 2024 SWAG - Shop</p>
          </footer>
       </aside>
-      <div class="background-glass hidden"></div>
+      <div class="background-glass glass-hidden"></div>
+
       <main>
          <h1><span>SWAG - Shop</span> <br>La mejor ropa! Al mejor precio!</h1>
          <h2 id="titulo-categoria">Todos los productos</h2>
          <div class="container-productos">
             <div class="producto">
-               <img src="images/Nike Air Max Plus.jpg" alt="Nike Air Max" class="producto-img">
+               <img src="images/zapas/Nike Air Max Plus.jpg" alt="Nike Air Max" class="producto-img">
                <div class="producto-detalles">
                   <h3 class="producto-titulo">Nike Air Max</h3>
                   <p class="producto-precio">$300</p>
@@ -59,7 +64,7 @@
                </div>
             </div>
             <div class="producto">
-               <img src="images/camiseta river.jpg" alt="" class="producto-img">
+               <img src="images/camisetas/river.jpg" alt="" class="producto-img">
                <div class="producto-detalles">
                   <h3 class="producto-titulo">Camiseta River Plate retro</h3>
                   <p class="producto-precio">$40</p>
@@ -67,7 +72,7 @@
                </div>
             </div>
             <div class="producto">
-               <img src="images/campe barca.jpg" alt="" class="producto-img">
+               <img src="images/campes/campe barca.jpg" alt="" class="producto-img">
                <div class="producto-detalles">
                   <h3 class="producto-titulo">Campe Adidas retro</h3>
                   <p class="producto-precio">$75</p>
@@ -75,7 +80,7 @@
                </div>
             </div>
             <div class="producto">
-               <img src="images/campe fila.jpg" alt="" class="producto-img">
+               <img src="images/campes/campe fila.jpg" alt="" class="producto-img">
                <div class="producto-detalles">
                   <h3 class="producto-titulo">Campe FILA retro</h3>
                   <p class="producto-precio">$70</p>
@@ -83,7 +88,7 @@
                </div>
             </div>
             <div class="producto">
-               <img src="images/lompa northFace.jpg" alt="" class="producto-img">
+               <img src="images/lompas/lompa northFace.jpg" alt="" class="producto-img">
                <div class="producto-detalles">
                   <h3 class="producto-titulo">Lompa North Face</h3>
                   <p class="producto-precio">$50</p>
@@ -93,8 +98,10 @@
          </div>
       </main>
 
-
    </div>
+
+
+<script src="js/menu.js"></script>
 </body>
 
 </html>

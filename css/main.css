@@ -4,6 +4,7 @@
     /* --colorMain: #C7AE94;
     --colorSecond: #5B4849; */
     --colorMain: #f9db6d;
+    --colorMainHot: #ffff3c;
     --colorMainDark: #dabf60;
     --colorSecond: #8b40d1;
     --colorSecondDark: #7F2CCB;
@@ -23,9 +24,8 @@ a{
 li{
     list-style: none;
 }
-/* .hidden{
-    display: none;
-} */
+
+
 
 img{
     max-width: 300px;
@@ -40,7 +40,6 @@ img{
 
 
 .wrapper{
-    background-color: var(--colorMain);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,14 +75,20 @@ img{
 
 
 /*ASIDE*/
+
 .background-glass{
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 120%;
     height: 100vh;
+    transition: all .4s;
 }
+.glass-hidden{
+    display: none;
+}
+
 aside{
     background-color: var(--colorSecondDark);
     top: 0;
@@ -96,22 +101,30 @@ aside{
     justify-content: space-between;
     padding: 2em 0;
     z-index: 100;
-    padding-left: 1em;
     color: white;
     font-family: var(--letra-parrafos);
     box-shadow: 7.5px 0 15px rgba(0, 0, 0, 0.5);
+    transform: translate(-110%);
+    transition: all .4s;
+}
+.menu-toggle{
+    transform: translateX(0);
 }
 .bi-x{
     position: absolute;
-    top: .15em;
-    right: .15em;
+    top: .05em;
+    right: .05em;
     font-size: 3em;
-    padding: .08em;
+    padding: .07em;
+
+}
+aside header, nav{
+    padding-left: 8%;
 }
 
 aside header .wrap-logo{
     margin-top: 1em;
-    width: 75%;
+    width: 82.5%;
     transform: rotate(-2.5deg);
 }
 aside header .wrap-logo img{
@@ -151,20 +164,51 @@ nav{
 }
 
 .menu .active{
-    background-color: white;
+    background-color: var(--colorMainHot);
     color: var(--colorSecondDark);
 }
-a{
+.carrito{
     color: white;
     display: flex;
-    gap: 1em;
+    gap: .5em;
     font-size: 1em;
     font-weight: 800;
     align-items: center;
+    padding-left: 1em;
+    font-size: 1.1em;
+}
+.carrito i{
+    color: var(--colorMainHot);
 }
 
 #numCarrito{
-    background-color: white;
+    background-color: var(--colorMainHot);
     color: var(--colorSecondDark);
     padding: 0 .3em;
+    border-radius: 5px;
+}
+
+aside footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+}
+.social-media{
+    font-size: 1.4em;
+    display: flex;
+    gap: .1em;
+}
+.social-media a{
+    color: white;
+    padding: .5em;
+}
+aside footer p{
+    color: rgba(219, 219, 219, 0.511);
+}
+
+
+main{
+    background-color: var(--colorMainHot);
+    
 }
