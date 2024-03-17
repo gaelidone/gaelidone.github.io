@@ -247,8 +247,8 @@ h2{
     display: flex;
     flex-direction: column;
     gap: .5em;
-    background-color: rgb(255, 115, 0);
-    box-shadow: 0 0 13px 7px rgb(182, 57, 12);
+    background: linear-gradient(135deg,rgba(21, 21, 21, 0.92),rgba(147, 145, 9, 0.515), rgba(255, 255, 255, 0.52));
+    backdrop-filter: blur(105px);
 }
 
 .producto img{
@@ -275,8 +275,8 @@ h2{
     border-radius: 20px;
     font-size: .9em;
     font-weight: 800;
-    background: orangered;
-    border: 5px solid white;
+    background: var(--colorSecondDark);
+    border: 5px solid var(--colorSecondDark);
     color: rgb(255, 255, 255);
 }
 
