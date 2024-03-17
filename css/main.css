@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chela+One&display=swap');
+
 
 :root{
     /* --colorMain: #C7AE94;
@@ -9,7 +11,7 @@
     --colorSecond: #8b40d1;
     --colorSecondDark: #7F2CCB;
     --letra-parrafos: sans-serif;
-    --letra-titulos: "Luckiest Guy", cursive;
+    --letra-titulos: "Almendra", serif;
 }
 
 
@@ -45,6 +47,7 @@ img{
     align-items: center;
     flex-direction: column;
     position: relative;
+    background-color: var(--colorSecondDark);
 }
 
 
@@ -54,8 +57,9 @@ img{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--colorSecond);
+    background-color: var(--colorSecondDark);
     padding: .5em 5% .2em 4%;
+    margin-bottom: .75em;
 }
 .header-mobile .wrap-logo{
     width: 150px;
@@ -208,7 +212,76 @@ aside footer p{
 }
 
 
+
+
+
+/*MAIN*/
+
 main{
     background-color: var(--colorMainHot);
-    
+    width: 92.5%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 1.5em;
+    font-family: var(--letra-parrafos);
+}
+
+h2{
+    font-family: var(--letra-titulos);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--colorSecondDark);
+    font-size: 2.3em;
+    margin-bottom: .75em;
+}
+
+.container-productos{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: auto;
+    gap: 2em;
+}
+.producto{
+    padding: 1em;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    background-color: rgb(255, 115, 0);
+    box-shadow: 0 0 13px 7px rgb(182, 57, 12);
+}
+
+.producto img{
+    width: 100%;
+    border-radius: 1em;
+}
+.producto-detalles{
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+    padding: 0 .5em;
+}
+.producto-titulo{
+    font-size: 1.3em;
+    font-weight: 900;
+}
+.producto-precio{
+    font-size: 1.1em;
+}
+.producto button{
+    width: 100%;
+    padding: .5em 1em;
+    border-radius: 20px;
+    font-size: .9em;
+    font-weight: 800;
+    background: orangered;
+    border: 5px solid white;
+    color: rgb(255, 255, 255);
+}
+
+
+@media(min-width:768px){
+
+
 }
