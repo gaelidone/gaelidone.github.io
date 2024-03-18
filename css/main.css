@@ -324,13 +324,13 @@ h2 {
    font-size: .8em;
    font-weight: 800;
    background: var(--colorSecondDark);
-   border: 5px solid var(--colorSecondDark);
+   border: 3px solid var(--colorSecondDark);
    color: rgb(255, 255, 255);
    transition: all .3s;
 }
-.producto-agregar:hover{
+.producto-agregar:hover, .producto-agregar:active{
    cursor: pointer;
-   background-color: #8b40d19f;
+   background-color: #250344;
 }
 
 
