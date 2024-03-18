@@ -173,10 +173,14 @@ nav {
    padding-left: .5em;
    display: flex;
    align-items: center;
-   margin-left: .1em;
-   transition: all .3s;
-}
+   margin-left: .175em;
+   transition: background-color .3s;
 
+}
+.menu li:hover{
+   background-color: #9141db;
+   cursor: pointer;
+}
 .bi-caret-right-square,
 .bi-caret-down-square-fill {
    margin-right: .5em;
@@ -188,6 +192,10 @@ nav {
    background-color: var(--colorMainHot);
    color: var(--colorSecondDark);
 }
+.menu .active:hover{
+   cursor: pointer;
+   background-color: var(--colorMainHot);
+}
 
 .carrito {
    color: white;
@@ -198,6 +206,8 @@ nav {
    align-items: center;
    padding-left: 1em;
    font-size: 1.1em;
+   text-align: center;
+
 }
 
 .carrito i {
@@ -254,8 +264,9 @@ h2 {
    font-weight: 700;
    font-style: italic;
    color: var(--colorSecondDark);
-   font-size: 2.3em;
-   margin-bottom: .75em;
+   font-size: 2.5em;
+   margin-bottom: .1em;
+   margin-top: -.25em;
 }
 
 .container-productos {
@@ -271,16 +282,20 @@ h2 {
    display: flex;
    flex-direction: column;
    gap: .5em;
-   background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(139, 137, 9, 0.515), rgba(139, 137, 9, 0.515), rgba(0, 0, 0, 0.85));
-   backdrop-filter: blur(105px);
+   background: linear-gradient(135deg,rgb(24, 24, 24), rgba(192, 192, 16, 0.658), rgb(92, 92, 92));
 }
 
-.producto img {
+
+.wrap-produc_img{
    width: 100%;
-   height: auto;
+   height: 100%;
+}
+.wrap-produc_img img{
+   object-fit: cover;
+   width: 100%;
+   height: 100%;
    border-radius: 20px;
 }
-
 .producto-detalles {
    border-radius: 20px;
    display: flex;
@@ -306,15 +321,22 @@ h2 {
    width: 100%;
    padding: .5em 1em;
    border-radius: 20px;
-   font-size: .9em;
+   font-size: .8em;
    font-weight: 800;
    background: var(--colorSecondDark);
    border: 5px solid var(--colorSecondDark);
    color: rgb(255, 255, 255);
+   transition: all .3s;
+}
+.producto-agregar:hover{
+   cursor: pointer;
+   background-color: #8b40d19f;
 }
 
 
 
+
+/************************************************************************************************/
 
 /*RESPONSIVE*/
 
@@ -379,6 +401,7 @@ h2 {
    h2 {
       font-size: 2.8em;
       margin-bottom: .25em;
+      margin-top: 0;
    }
 
 

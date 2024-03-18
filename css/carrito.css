@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chela+One&display=swap');
+
+
+:root {
+   /* --colorMain: #C7AE94;
+    --colorSecond: #5B4849; */
+   --colorMain: #f9db6d;
+   --colorMainHot: #ffff3c;
+   --colorMainDark: #dabf60;
+   --colorSecond: #8b40d1;
+   --colorSecondDark: #7F2CCB;
+   --letra-parrafos: sans-serif;
+   --letra-titulos: "Almendra", serif;
+}
+
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+a {
+   text-decoration: none;
+}
+
+li {
+   list-style: none;
+}
+
+/*ESTILOS GENERALES*/
+/************************************************/
+
+
+
+
+
+/*MOBILE*/
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--colorSecondDark);
+}
+ 
+/*HEADER mobile*/
+.header-mobile {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--colorSecondDark);
+    padding: .5em 5% .2em 4%;
+    margin-bottom: .75em;
+ }
+ 
+ .header-mobile .wrap-logo {
+    width: 150px;
+    transform: rotate(-2.5deg);
+ }
+ 
+ .header-mobile .wrap-logo img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+ }
+ 
+ .header-mobile .bi-list {
+    font-size: 2.5em;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+ }
+ 
