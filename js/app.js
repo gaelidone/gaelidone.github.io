@@ -16,12 +16,14 @@ categorias.forEach((categ) => {
    })
 })
 
+
 crearProductos();
 categorias.forEach(categ => {
    categ.addEventListener('click',()=>{
       let idCateg = categ.id;
       containProducs.innerHTML = "";
       crearProductos(idCateg);
+
    })
 });
 
@@ -56,4 +58,52 @@ function crearProductos(idCateg){
 
 
 
+/*CARRITO*/
+const botonesAgregar = document.querySelectorAll('.producto-agregar');
 
+botonesAgregar.forEach(btnAgregar => {
+   btnAgregar.addEventListener('click',()=>{
+      let srcImg = btnAgregar.parentElement.parentElement.previousElementSibling.lastElementChild.getAttribute('src')
+      let producto = productoAdd(srcImg);
+
+      if (!localStorage.getItem(producto.id)) {
+         localStorage.setItem(producto.id, producto.id);
+         localStorage.setItem(`CANTIDAD${producto.id}`, 1);
+      }else{
+         let cantidad = parseInt(localStorage.getItem(`CANTIDAD${producto.id}`));
+         cantidad++
+         localStorage.setItem(`CANTIDAD${producto.id}`, cantidad)
+      }
+
+
+   })
+});
+
+
+
+
+function productoAdd(srcImg) {
+   let prod = productosObj.filter(producto => producto.imagen === srcImg)
+   return prod[0];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// localStorage.clear()

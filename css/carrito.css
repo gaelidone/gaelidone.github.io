@@ -279,7 +279,8 @@ aside footer p {
    align-items: center;
  }
  .prod-carrito_info p{
-   font-size: 1.1em;
+   font-size: 1em;
+   font-weight: bold;
  }
  .carrito-subTotal{
    display: none;
