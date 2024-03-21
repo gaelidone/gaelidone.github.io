@@ -488,3 +488,12 @@ aside footer p {
       min-height: 96.82vh;
    }
 }
+
+
+
+/*SWEET ALERT*/
+.swal2-title{
+   font-family: var(--letra-parrafos);
+   font-weight: 800;
+   color: rgb(37, 37, 37);
+}

@@ -2,6 +2,7 @@ const categorias = document.querySelectorAll('.li-categoria');
 const menu = document.querySelector('.menu');
 const containProducs = document.querySelector('.container-productos')
 const h2 = document.getElementById('titulo-categoria')
+const numCarrito = document.querySelector('#numCarrito')
 
 
 categorias.forEach((categ) => {
@@ -60,7 +61,7 @@ function crearProductos(idCateg){
 
 /*CARRITO*/
 const botonesAgregar = document.querySelectorAll('.producto-agregar');
-
+let num = 0;
 botonesAgregar.forEach(btnAgregar => {
    btnAgregar.addEventListener('click',()=>{
       let srcImg = btnAgregar.parentElement.parentElement.previousElementSibling.lastElementChild.getAttribute('src')
@@ -74,7 +75,8 @@ botonesAgregar.forEach(btnAgregar => {
          cantidad++
          localStorage.setItem(`CANTIDAD${producto.id}`, cantidad)
       }
-
+      num++
+      numCarrito.innerHTML = num;
 
    })
 });

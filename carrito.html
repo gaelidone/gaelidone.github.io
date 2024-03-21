@@ -55,11 +55,9 @@
       <main>
          <h2 id="titulo">Carrito</h2>
          <div class="container-carrito">
-            <p class="avisoCarrito disabled" id="carritoComprado">Muchas gracias por tu compra.<br><i
-                  class="bi bi-emoji-smile"></i></p>
             <div class="carrito-productos">
-               
-               
+
+
             </div>
             <div class="carrito-acciones">
                <div class="carrito-acciones-izq">
@@ -68,17 +66,18 @@
                <div class="carrito-acciones-der">
                   <div class="precio">
                      <p>Total: </p>
-                     <p id="total">$320</p>
+                     <p id="total"></p>
                   </div>
                   <button id="comprar">COMPRAR AHORA</button>
                </div>
             </div>
-            <p class="avisoCarrito disabled" id="carritoVacio">Tu carrito está vacío. <br><i
-                  class="bi bi-emoji-frown"></i></p>
+            <p class="avisoCarrito disabled" id="carritoComprado">Muchas gracias por tu compra.<br><i class="bi bi-emoji-smile"></i></p>
+            <p class="avisoCarrito disabled" id="carritoVacio">Tu carrito está vacío. <br><i class="bi bi-emoji-frown"></i></p>
          </div>
       </main>
    </div>
 
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <script src="js/productos.js"></script>
    <script src="js/menu.js"></script>
    <script src="js/carrito.js"></script>
