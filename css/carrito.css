@@ -192,7 +192,7 @@ aside footer {
 }
 
 .social-media {
-   font-size: 1.4em;
+   font-size: 1.2em;
    display: flex;
    gap: .1em;
 }
@@ -204,6 +204,7 @@ aside footer {
 
 aside footer p {
    color: rgba(219, 219, 219, 0.511);
+   font-size: .8em;
 }
 
 
@@ -409,7 +410,7 @@ aside footer p {
       margin-top: .5em;
       margin-left: -.5em;
       width: 100%;
-      max-width: 300px;
+      max-width: 250px;
    }
    .menu li:nth-child(2) a{
       width: 102%;
@@ -496,4 +497,7 @@ aside footer p {
    font-family: var(--letra-parrafos);
    font-weight: 800;
    color: rgb(37, 37, 37);
+}
+#swal2-html-container{
+   font-family: var(--letra-parrafos);
 }

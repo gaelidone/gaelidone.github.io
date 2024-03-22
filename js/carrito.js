@@ -63,9 +63,23 @@ trashIcons.forEach(trash => {
    trash.addEventListener('click', ()=>{
       let imagenProd = trash.parentElement.previousElementSibling.firstElementChild.firstElementChild.getAttribute('src')
       let idProdRemove = prodEliminar(imagenProd).id;
+      
+      /* actualizar precio total */
+      let idProd = localStorage.getItem(idProdRemove);
+      let cantidadProd = localStorage.getItem(`CANTIDAD${idProdRemove}`)
+      actualizarPrecioTotal(idProd, cantidadProd)
+      /************************************/
+
       localStorage.removeItem(idProdRemove);
       localStorage.removeItem(`CANTIDAD${idProdRemove}`);
       trash.parentElement.parentElement.remove()
+      numCarrito.innerHTML = totalProductos()
+      if (numCarrito.innerHTML == "0") {
+         carritoAcciones.classList.add("disabled");
+         carritoVacio.classList.remove("disabled");   
+      }
+
+
    })
 });
 
@@ -84,6 +98,7 @@ vaciarBtn.addEventListener('click',()=>{
       vaciarCarrito();
       carritoAcciones.classList.add("disabled");
       carritoVacio.classList.remove("disabled");
+      numCarrito.innerHTML = totalProductos()
    }
   })
 })
@@ -99,11 +114,12 @@ btnComprar.addEventListener('click', ()=>{
       icon: "success",
       title: "Compra realizada con éxito!",
       showConfirmButton: false,
-      timer: 1500
+      timer: 1800
     });
    vaciarCarrito();
    textoCompra.classList.remove('disabled');
    carritoAcciones.classList.add("disabled");
+   numCarrito.innerHTML = totalProductos();
 
 })
 
@@ -122,6 +138,10 @@ if (wrapCarrito.firstElementChild === null) {
 
 
 
+
+/* num carrito */
+let num = totalProductos();
+numCarrito.innerHTML = num;
 
 
 
@@ -149,3 +169,17 @@ function totalProductos() {
    }
    return total
 }
+
+function actualizarPrecioTotal(idProdRemove, cantidad) {
+   let prod = productosObj.filter(producto => producto.id === idProdRemove);
+   let precioProd = prod[0].precio;
+   let precioDesactualizadoString = textoPrecioTotal.innerHTML;
+   let precioDesactualizado = removerSigno(precioDesactualizadoString);
+   let precioActualizado = precioDesactualizado - (precioProd * cantidad);
+   textoPrecioTotal.innerHTML = `$${precioActualizado}`;
+}
+
+function removerSigno(numConSigno) {
+   return parseInt(numConSigno.replace("$", ""));
+}
+

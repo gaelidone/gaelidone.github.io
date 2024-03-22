@@ -3,7 +3,7 @@ const menu = document.querySelector('.menu');
 const containProducs = document.querySelector('.container-productos')
 const h2 = document.getElementById('titulo-categoria')
 const numCarrito = document.querySelector('#numCarrito')
-
+let num = totalProductos();
 
 categorias.forEach((categ) => {
    categ.addEventListener('click', () => {
@@ -20,7 +20,7 @@ categorias.forEach((categ) => {
 
 crearProductos();
 categorias.forEach(categ => {
-   categ.addEventListener('click',()=>{
+   categ.addEventListener('click', () => {
       let idCateg = categ.id;
       containProducs.innerHTML = "";
       crearProductos(idCateg);
@@ -30,12 +30,12 @@ categorias.forEach(categ => {
 
 
 
-function crearProductos(idCateg){
+function crearProductos(idCateg) {
    let prodElegidos = productosObj.filter(prod => prod.categoria === idCateg)
    if (prodElegidos.length === 0) {
       prodElegidos = productosObj.map(prod => prod)
    }
-   prodElegidos.forEach(producto =>{
+   prodElegidos.forEach(producto => {
       let newProducto = `
         <div class="producto">
            <div class="wrap-produc_img">
@@ -49,63 +49,58 @@ function crearProductos(idCateg){
             </div>
            </div>
         </div>`;
-        containProducs.innerHTML += newProducto;
+      containProducs.innerHTML += newProducto;
 
       aside.classList.remove("menu-toggle");
       glass.classList.add('glass-hidden');
    })
+
+   
+   /* CARRITO */
+   const botonesAgregar = document.querySelectorAll('.producto-agregar');
+
+   botonesAgregar.forEach(btnAgregar => {
+      btnAgregar.addEventListener('click', () => {
+         let srcImg = btnAgregar.parentElement.parentElement.previousElementSibling.lastElementChild.getAttribute('src')
+         let producto = productoAdd(srcImg);
+
+         if (!localStorage.getItem(producto.id)) {
+            localStorage.setItem(producto.id, producto.id);
+            localStorage.setItem(`CANTIDAD${producto.id}`, 1);
+         } else {
+            let cantidad = parseInt(localStorage.getItem(`CANTIDAD${producto.id}`));
+            cantidad++
+            localStorage.setItem(`CANTIDAD${producto.id}`, cantidad)
+         }
+         num++
+         numCarrito.innerHTML = num;
+      })
+   });
 }
 
 
-
-
-/*CARRITO*/
-const botonesAgregar = document.querySelectorAll('.producto-agregar');
-let num = 0;
-botonesAgregar.forEach(btnAgregar => {
-   btnAgregar.addEventListener('click',()=>{
-      let srcImg = btnAgregar.parentElement.parentElement.previousElementSibling.lastElementChild.getAttribute('src')
-      let producto = productoAdd(srcImg);
-
-      if (!localStorage.getItem(producto.id)) {
-         localStorage.setItem(producto.id, producto.id);
-         localStorage.setItem(`CANTIDAD${producto.id}`, 1);
-      }else{
-         let cantidad = parseInt(localStorage.getItem(`CANTIDAD${producto.id}`));
-         cantidad++
-         localStorage.setItem(`CANTIDAD${producto.id}`, cantidad)
-      }
-      num++
-      numCarrito.innerHTML = num;
-
-   })
-});
+numCarrito.innerHTML = num;
 
 
 
+
+
+/* FUNCIONES */
 
 function productoAdd(srcImg) {
    let prod = productosObj.filter(producto => producto.imagen === srcImg)
    return prod[0];
 }
 
+function totalProductos() {
+   let total = 0;
+   let claves = Object.keys(localStorage);
+   for (let i = 0; i < localStorage.length; i++) {
+      if (claves[i].includes("CANTIDAD") === true) {
+         let cantidad = parseInt(localStorage.getItem(claves[i]));
+         total += cantidad;
+      }
+   }
+   return total
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// localStorage.clear()
