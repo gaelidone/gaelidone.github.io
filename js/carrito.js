@@ -78,7 +78,27 @@ trashIcons.forEach(trash => {
          carritoAcciones.classList.add("disabled");
          carritoVacio.classList.remove("disabled");   
       }
-
+      Toastify({
+         text: "Producto eliminado",
+         duration: 1850,
+         close: true,
+         gravity: "top", // `top` or `bottom`
+         position: "right", // `left`, `center` or `right`
+         stopOnFocus: true, // Prevents dismissing of toast on hover
+         style: {
+           background: "rgb(181, 26, 26)",
+           borderRadius: "2rem",
+           textTransform: "uppercase",
+           fontSize: ".95em",
+           fontFamily: "sans-serif",
+           fontWeight: "700"
+         },
+         offset: {
+             x: '2em', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+             y: '2em' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+           },
+         onClick: function(){} // Callback after click
+       }).showToast();
 
    })
 });

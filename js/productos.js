@@ -36,6 +36,13 @@ let productosObj = [
       'precio': 30
    },
    {
+      'id': "camiseta-09",
+      'titulo': "Camiseta Brasil retro",
+      'imagen': "./images/camisetas/camiseta brasil.jpg",
+      'categoria': "Camisetas",
+      'precio': 35
+   },
+   {
       'id': "camiseta-06",
       'titulo': "Camiseta AC Milan retro",
       'imagen': "./images/camisetas/camiseta milan.jpg",
@@ -47,7 +54,21 @@ let productosObj = [
       'titulo': "Camiseta Inter Milan retro",
       'imagen': "./images/camisetas/camiseta inter.jpg",
       'categoria': "Camisetas",
-      'precio': 40
+      'precio': 35
+   },
+   {
+      'id': "camiseta-08",
+      'titulo': "Camiseta Liverpool retro",
+      'imagen': "./images/camisetas/camiseta liverpool.jpg",
+      'categoria': "Camisetas",
+      'precio': 55
+   },
+   {
+      'id': "camiseta-10",
+      'titulo': "Camiseta Man United retro",
+      'imagen': "./images/camisetas/camiseta manUnited.jpg",
+      'categoria': "Camisetas",
+      'precio': 50
    },
 /* CAMPERAS */
    {
@@ -73,8 +94,8 @@ let productosObj = [
    },
    {
       'id': "campe-04",
-      'titulo': "Campe Nike Clasic",
-      'imagen': "./images/campes/campe nike.jpg",
+      'titulo': "Campe Nike WB",
+      'imagen': "./images/campes/campe nikeWB.jpg",
       'categoria': "Campes",
       'precio': 65
    },
@@ -84,6 +105,13 @@ let productosObj = [
       'imagen': "./images/campes/campe adidas.jpg",
       'categoria': "Campes",
       'precio': 60
+   },
+   {
+      'id': "campe-06",
+      'titulo': "Campe Nike",
+      'imagen': "./images/campes/campe Nike.jpg",
+      'categoria': "Campes",
+      'precio': 70
    },
 /* PANTALONES */
    {
