@@ -14,6 +14,9 @@ categorias.forEach((categ) => {
       categ.firstElementChild.classList.replace("bi-caret-right-square", "bi-caret-down-square-fill");
       categ.classList.add('active');
       h2.innerHTML = categ.lastElementChild.innerHTML;
+      window.scrollTo({
+         top: 0,
+     });
    })
 })
 
@@ -125,3 +128,28 @@ function totalProductos() {
    return total
 }
 
+/* SCROLL */
+const icono = document.querySelector('.bi-chevron-double-up');
+
+
+function verificarPosicionScroll() {
+   const alturaVentanaVisible = window.innerHeight; // Altura de la ventana visible (viewport height)
+   const posicionScroll = window.scrollY || window.pageYOffset; // Posición actual del scroll
+
+   // Calcular la posición del usuario en relación con la altura visible de la ventana
+   const posicionRelativa = posicionScroll / alturaVentanaVisible;
+
+   if (posicionRelativa >= 0.35) {
+      icono.classList.add('visible');
+   } else {
+      icono.classList.remove('visible');
+   }
+}
+
+window.addEventListener('scroll', verificarPosicionScroll);
+icono.addEventListener('click', ()=>{
+   window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+  });
+})

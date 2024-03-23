@@ -261,6 +261,7 @@ main {
    padding: 1.5em;
    font-family: var(--letra-parrafos);
    min-height: 100vh;
+   position: relative;
 }
 
 h2 {
@@ -337,8 +338,22 @@ h2 {
    background-color: #250344;
 }
 
+.bi-chevron-double-up{
+   position: absolute;
+   background-color: white;
+   border-radius: 50%;
+   padding: .25em;
+   font-size: 2em;
+   bottom: 2%;
+   right: 1%;
+   position: fixed;
+   transition: all 1s;
+   display: none; 
+}
 
-
+.visible{
+   display: block;
+}
 
 /************************************************************************************************/
 
@@ -418,6 +433,9 @@ h2 {
 @media (min-width: 992px) {
    .container-productos {
       grid-template-columns: repeat(3, 1fr);
+   }
+   .pc{
+      display: none;
    }
 }
 
